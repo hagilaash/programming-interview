@@ -3,8 +3,7 @@
 
 // PHP BASICS
 
-
-// 1. Print Hello World
+// 1.Print Hello World
 
 echo "Hello World";
 
