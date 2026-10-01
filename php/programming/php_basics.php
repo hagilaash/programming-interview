@@ -99,9 +99,9 @@ echo "$b\n";
 $a = 10;
 $b = 20;
 
-$a = $a + $b;
-$b = $a - $b;
-$a = $a - $b;
+$a = $a + $b;  //10+20=30
+$b = $a - $b;  //30-20=10
+$a = $a - $b;  //30-10=20
 
 echo "$a\n";
 echo "$b\n";
@@ -287,4 +287,295 @@ for ($i = 1; $i <= $n; $i++) {
 }
 
 ?>
+
+
+
 ```
+19.CheckPrimeNumber.php
+
+<?php
+
+$n = 7;
+$isPrime = true;
+
+if ($n <= 1) {
+    $isPrime = false;
+} else {
+    for ($i = 2; $i < $n; $i++) {
+        if ($n % $i == 0) {
+            $isPrime = false;
+            break;
+        }
+    }
+}
+
+if ($isPrime) {
+    echo "$n is a prime number";
+} else {
+    echo "$n is not a prime number";
+}
+
+?>
+
+
+20.PrintPrimeNumbers.php
+
+<?php
+
+$count = 0;
+$n = 2;
+
+while ($count < 10) {
+
+    $isPrime = true;
+
+    for ($i = 2; $i < $n; $i++) {
+        if ($n % $i == 0) {
+            $isPrime = false;
+            break;
+        }
+    }
+
+    if ($isPrime) {
+        echo $n . " ";
+        $count++;
+    }
+
+    $n++;
+}
+
+?>
+
+
+21.CountDigits.php
+
+<?php
+
+$n = 12345;
+$count = 0;
+
+while ($n > 0) {
+    $n = intdiv($n, 10);
+    $count++;
+}
+
+echo "Number of digits: $count";
+
+?>
+
+22.ReverseNumber.php
+
+<?php
+
+$n = 12345;
+$reverse = 0;
+
+while ($n > 0) {
+
+    $digit = $n % 10;
+
+    $reverse = ($reverse * 10) + $digit;
+
+    $n = intdiv($n, 10);
+}
+
+echo "Reverse number: $reverse";
+
+?>
+
+
+23.FindSumOfDigits.php
+
+<?php
+
+$n = 12345;
+$sum = 0;
+
+while ($n > 0) {
+
+    $digit = $n % 10;
+
+    $sum = $sum + $digit;
+
+    $n = intdiv($n, 10);
+}
+
+echo "Sum of digits: $sum";
+
+?>
+
+
+24.FindProductOfDigits.php
+
+<?php
+
+$n = 12345;
+$product = 1;
+
+while ($n > 0) {
+
+    $digit = $n % 10;
+
+    $product = $product * $digit;
+
+    $n = intdiv($n, 10);
+}
+
+echo "Product of digits: $product";
+
+?>
+
+25.CheckArmstrongNumber.php
+
+<?php
+
+$n = 153;
+$original = $n;
+$digits = 0;
+$sum = 0;
+
+// Count number of digits
+$temp = $n;
+
+while ($temp > 0) {
+    $temp = intdiv($temp, 10);
+    $digits++;
+}
+
+// Calculate Armstrong sum
+$temp = $n;
+
+while ($temp > 0) {
+
+    $digit = $temp % 10;
+
+    $sum = $sum + ($digit ** $digits);
+
+    $temp = intdiv($temp, 10);
+}
+
+if ($sum == $original) {
+    echo "$original is an Armstrong number";
+} else {
+    echo "$original is not an Armstrong number";
+}
+
+?>
+
+26.CheckPalindromeNumber.php
+
+<?php
+
+$n = 121;
+$original = $n;
+$reverse = 0;
+
+while ($n > 0) {
+
+    $digit = $n % 10;
+
+    $reverse = ($reverse * 10) + $digit;
+
+    $n = intdiv($n, 10);
+}
+
+if ($original == $reverse) {
+    echo "$original is a palindrome number";
+} else {
+    echo "$original is not a palindrome number";
+}
+
+?>
+
+27.CheckPerfectNumber.php
+
+<?php
+
+$n = 6;
+$sum = 0;
+
+for ($i = 1; $i < $n; $i++) {
+
+    if ($n % $i == 0) {
+        $sum = $sum + $i;
+    }
+}
+
+if ($sum == $n) {
+    echo "$n is a perfect number";
+} else {
+    echo "$n is not a perfect number";
+}
+
+?>
+
+28.CheckStrongNumber.php
+
+<?php
+
+$n = 145;
+$original = $n;
+$sum = 0;
+
+while ($n > 0) {
+
+    $digit = $n % 10;
+
+    $factorial = 1;
+
+    for ($i = 1; $i <= $digit; $i++) {
+        $factorial = $factorial * $i;
+    }
+
+    $sum = $sum + $factorial;
+
+    $n = intdiv($n, 10);
+}
+
+if ($sum == $original) {
+    echo "$original is a strong number";
+} else {
+    echo "$original is not a strong number";
+}
+
+?>
+
+29.FindGCD.php
+
+<?php
+
+$a = 12;
+$b = 18;
+
+$gcd = 1;
+
+for ($i = 1; $i <= $a && $i <= $b; $i++) {
+
+    if ($a % $i == 0 && $b % $i == 0) {
+        $gcd = $i;
+    }
+}
+
+echo "GCD = $gcd";
+
+?>
+
+30.FindLCM.php
+
+<?php
+
+$a = 12;
+$b = 18;
+
+$max = ($a > $b) ? $a : $b;
+
+for ($lcm = $max; ; $lcm++) {
+
+    if ($lcm % $a == 0 && $lcm % $b == 0) {
+        break;
+    }
+}
+
+echo "LCM = $lcm";
+
+?>
