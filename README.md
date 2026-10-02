@@ -33,4 +33,15 @@
 29. Find the GCD of Two Numbers
 30. Find the LCM of Two Numbers
 
+### PHP Arrays
+
+31. Create an Array
+32. Print an Array
+33. Count Array Elements
+34. Find the Sum of Array Elements
+35. Print an Array Element by Position
+36. Print Array Elements Using `foreach`
+37. Find the Average of Array Elements
+38. Find the Largest Number in an Array
+39. Find the Smallest Number in an Array
 

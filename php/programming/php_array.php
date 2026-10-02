@@ -33,6 +33,9 @@ foreach ($fruits as $value) {
 $average = $sum / $count;
 echo "Average: $average\n";
 
+//Largest → if ($value > $largest)
+//Smallest → if ($value < $smallest)
+
 // 8. Find Largest Array Number max
 $largest = $numbers[0];
 
