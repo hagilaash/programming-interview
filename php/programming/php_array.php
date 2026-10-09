@@ -92,4 +92,43 @@ foreach ($numbers as $value) {
 
 echo "Second smallest number: $secondSmallest\n";
 
+// 12. Insert an Element into an Array
+
+$numbers = [10, 20, 30, 40];
+
+$newElement = 50;
+
+$numbers[] = $newElement;
+
+echo "Array after inserting element: \n";
+
+print_r($numbers);
+
+
+// 13. Insert an Element at a Specific Position
+
+$numbers = [10, 20, 30, 40];
+
+$newElement = 25;
+$position = 2;
+
+array_splice($numbers, $position, 0, $newElement);
+
+echo "Array after inserting element at position $position: \n";
+
+print_r($numbers);
+
+
+// 14. Insert an Element at the Beginning of an Array
+
+$numbers = [10, 20, 30, 40];
+
+$newElement = 5;
+
+array_unshift($numbers, $newElement);
+
+echo "Array after inserting element at the beginning: \n";
+
+print_r($numbers);
+
 ?>
