@@ -58,4 +58,30 @@ foreach ($numbers as $value) {
 
 echo "Smallest number: $smallest\n";
 
+// 10. Find Second Largest Array Number
+
+$numbers = [10, 20, 30, 40]; 
+$largest = $numbers[0]; 
+$secondLargest = null; 
+foreach ($numbers as $value)
+     { if ($value > $largest)
+ { $secondLargest = $largest; $largest = $value; }
+  elseif ($value < $largest && ($secondLargest === null 
+  || $value > $secondLargest)) { $secondLargest = $value;
+   } } 
+  echo "Second largest number: $secondLargest\n";
+
+ // 11. Find Second Smallest Array Number
+
+$numbers = [10, 20, 30, 40];
+ $smallest = $numbers[0]; 
+ $secondSmallest = null; 
+ foreach ($numbers as $value) { 
+    if ($value < $smallest) 
+        { $secondSmallest = $smallest; $smallest = $value; } 
+    elseif ($value > $smallest && ($secondSmallest === null || $value < $secondSmallest))
+         { $secondSmallest = $value; } 
+    } 
+    
+    echo "Second smallest number: $secondSmallest\n";  
 ?>
