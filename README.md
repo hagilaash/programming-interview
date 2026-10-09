@@ -46,3 +46,4 @@
 39. Find the Smallest Number in an Array
 40. Find the second Smallest Number in an Array
 41. Find the second Largest Number in an Array
+Practicing PHP array operations, including inserting elements at different positions.
