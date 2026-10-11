@@ -131,4 +131,49 @@ echo "Array after inserting element at the beginning: \n";
 
 print_r($numbers);
 
+
+$numbers = [10, 20, 30, 40, 50];
+
+echo "Original Array:\n";
+print_r($numbers);
+
+// Delete the element at index 2
+unset($numbers[2]);
+
+echo "\nArray After Deleting Element:\n";
+print_r($numbers);
+
+$numbers = [10, 20, 30, 40, 50];
+
+echo "Original Array:\n";
+print_r($numbers);
+
+$value = 30;
+
+// Search for the value in the array
+$index = array_search($value, $numbers, true);
+
+// Delete the element if the value exists
+if ($index !== false) {
+    unset($numbers[$index]);
+}
+
+echo "\nArray After Deleting Value $value:\n";
+print_r($numbers);
+
+
+$numbers = [10, 20, 30, 40, 50];
+
+echo "Original Array:\n";
+print_r($numbers);
+
+// Delete the element at index 2
+unset($numbers[2]);
+
+// Reindex the array
+$numbers = array_values($numbers);
+
+echo "\nArray After Deleting and Reindexing:\n";
+print_r($numbers);
+
 ?>
