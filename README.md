@@ -46,4 +46,15 @@
 39. Find the Smallest Number in an Array
 40. Find the second Smallest Number in an Array
 41. Find the second Largest Number in an Array
-Practicing PHP array operations, including inserting elements at different positions.
+42. Insert an Element into an Array
+43. Insert an Element at a Specific Position
+44. Insert an Element at the Beginning of an Array
+45. Delete an Array Element by Index
+46. Delete an Array Element by Value
+47. Remove an Array Element and Reindex the Array
+48. Update an Array Element
+49. Sort an Array in Ascending Order
+50. Sort an Array in Descending Order
+51. Reverse an Array
+52. Search for an Array Element
+53. Check Whether an Element Exists in an Array
