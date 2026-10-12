@@ -131,49 +131,123 @@ echo "Array after inserting element at the beginning: \n";
 
 print_r($numbers);
 
+// 15. Delete an Array Element by Index
 
-$numbers = [10, 20, 30, 40, 50];
+$numbers = [10, 20, 30, 40];
 
-echo "Original Array:\n";
+$indexToDelete = 2;
+
+unset($numbers[$indexToDelete]);
+
+echo "Array after deleting an element by index: \n";
+
 print_r($numbers);
 
-// Delete the element at index 2
-unset($numbers[2]);
 
-echo "\nArray After Deleting Element:\n";
-print_r($numbers);
+// 16. Delete an Array Element by Value
 
-$numbers = [10, 20, 30, 40, 50];
+$numbers = [10, 20, 30, 40];
 
-echo "Original Array:\n";
-print_r($numbers);
+$valueToDelete = 30;
 
-$value = 30;
+$key = array_search($valueToDelete, $numbers, true);
 
-// Search for the value in the array
-$index = array_search($value, $numbers, true);
-
-// Delete the element if the value exists
-if ($index !== false) {
-    unset($numbers[$index]);
+if ($key !== false) {
+    unset($numbers[$key]);
 }
 
-echo "\nArray After Deleting Value $value:\n";
+echo "Array after deleting an element by value: \n";
+
 print_r($numbers);
 
 
-$numbers = [10, 20, 30, 40, 50];
+// 17. Remove an Array Element and Reindex the Array
 
-echo "Original Array:\n";
-print_r($numbers);
+$numbers = [10, 20, 30, 40];
 
-// Delete the element at index 2
-unset($numbers[2]);
+unset($numbers[1]);
 
-// Reindex the array
 $numbers = array_values($numbers);
 
-echo "\nArray After Deleting and Reindexing:\n";
+echo "Array after removing an element and reindexing: \n";
+
 print_r($numbers);
+
+
+// 18. Update an Array Element
+
+$numbers = [10, 20, 30, 40];
+
+$numbers[2] = 99;
+
+echo "Array after updating an element: \n";
+
+print_r($numbers);
+
+
+// 19. Sort an Array in Ascending Order
+
+$numbers = [40, 10, 30, 20];
+
+sort($numbers);
+
+echo "Array sorted in ascending order: \n";
+
+print_r($numbers);
+
+
+// 20. Sort an Array in Descending Order
+
+$numbers = [40, 10, 30, 20];
+
+rsort($numbers);
+
+echo "Array sorted in descending order: \n";
+
+print_r($numbers);
+
+
+// 21. Reverse an Array
+
+$numbers = [10, 20, 30, 40];
+
+$reversed = array_reverse($numbers);
+
+echo "Original array: \n";
+
+print_r($numbers);
+
+echo "Reversed array: \n";
+
+print_r($reversed);
+
+
+// 22. Search for an Array Element
+
+$numbers = [10, 20, 30, 40];
+
+$searchValue = 30;
+
+$key = array_search($searchValue, $numbers, true);
+
+if ($key !== false) {
+    echo "Element $searchValue found at index $key.";
+} else {
+    echo "Element $searchValue not found.";
+}
+
+
+// 23. Check Whether an Element Exists in an Array
+
+$fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+$searchFruit = "Mango";
+
+if (in_array($searchFruit, $fruits, true)) {
+    echo "$searchFruit exists in the array.";
+} else {
+    echo "$searchFruit does not exist in the array.";
+}
+
 
 ?>
