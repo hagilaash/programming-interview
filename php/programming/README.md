@@ -72,3 +72,18 @@
 21. SplitArray.php
 22. ConvertArrayToString.php
 23. ConvertStringToArray.php
+24. PHP Associative Arrays
+25. Create and Print Associative Array
+26. Access Associative Array
+27. Add Associative Array Elements
+28. Merge Associative Arrays
+29. Update Associative Array Elements
+30. Delete Associative Array Element
+31. Check Associative Key Exists
+32. Check Associative Value Exists
+33. Sort Associative Array By Value
+34. Sort Associative Array By Key
+35. Reverse Associative Array
+36. Find Largest Associative Array Value
+37. Find Smallest Associative Array Value
+38. Count Associative Array Elements

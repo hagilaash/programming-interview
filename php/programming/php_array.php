@@ -428,3 +428,165 @@ $result = explode(",", $str);
 print_r($result);
 
 ?>
+
+/// associative array
+
+<?php
+
+// 1. Create and Print Associative Array
+
+$arr1 = [
+    "honda" => "india",
+    "bmw" => "japan",
+    "benz" => "china"
+];
+
+print_r($arr1);
+echo $arr1["honda"] . "\n";
+
+
+// 2. Access Associative Array Using Foreach
+
+foreach ($arr1 as $keys => $values) {
+    echo $keys . " : " . $values . "\n";
+}
+
+
+// 3. Add Associative Array Elements
+
+$arr1 = [
+    "honda" => "india",
+    "bmw" => "japan",
+    "benz" => "china"
+];
+
+$arr1["hyundai"] = "south korea";
+$arr1["audi"] = "germany";
+$arr1["toyota"] = "japan";
+
+print_r($arr1);
+
+
+// 4. Merge Two Associative Arrays
+
+$arr1 = [
+    "honda" => "india",
+    "bmw" => "japan",
+    "benz" => "china"
+];
+
+$arr2 = [
+    "kia" => "south korea",
+    "volvo" => "sweden"
+];
+
+$merge = array_merge($arr1, $arr2);
+
+print_r($merge);
+
+
+// 5. Update Associative Array Elements
+
+$arr1=["honda"=>"india","bmw"=>"japan","benz"=>"china"];
+$arr1["honda"]="northkorea";  // using keys updating values
+$arr1["japan"]="BMW";
+$keys = array_keys($arr1);
+$arr1[$keys[1]] = "germany";
+print_r($arr1);
+
+
+// 6. Delete Associative Array Element
+
+unset($arr1["honda"]);
+
+print_r($arr1);
+
+
+// 7. Check Associative Key Exists
+
+$search = "bmw";
+
+if (array_key_exists($search, $arr1)) {
+    echo "Key exists\n";
+} else {
+    echo "Key does not exist\n";
+}
+
+
+// 8. Check Associative Value Exists
+
+$search = "japan";
+
+if (in_array($search, $arr1)) {
+    echo "Value exists\n";
+} else {
+    echo "Value does not exist\n";
+}
+
+
+// 9. Sort Associative Array By Value
+
+$arr3 = [
+    "honda" => "india",
+    "bmw" => "japan",
+    "benz" => "china"
+];
+
+asort($arr3);   // Ascending order
+print_r($arr3);
+
+arsort($arr3);  // Descending order
+print_r($arr3);
+
+
+// 10. Sort Associative Array By Key
+
+ksort($arr3);   // Ascending order
+print_r($arr3);
+
+krsort($arr3);  // Descending order
+print_r($arr3);
+
+
+// 11. Reverse Associative Array
+
+$arr3 = array_reverse($arr3);
+
+print_r($arr3);
+
+
+// 12. Find Largest Associative Array Value
+
+$numbers = [
+    "honda" => 100,
+    "bmw" => 200,
+    "benz" => 150,
+    "audi" => 300
+];
+
+$largest = max($numbers);
+
+echo "Largest value: " . $largest . "\n";
+
+
+// 13. Find Smallest Associative Array Value
+
+$numbers = [
+    "honda" => 100,
+    "bmw" => 200,
+    "benz" => 150,
+    "audi" => 300
+];
+
+$smallest = min($numbers);
+
+echo "Smallest value: " . $smallest . "\n";
+
+
+// 14. Count Associative Array Elements
+
+$count = count($numbers);
+
+echo "Total elements: " . $count . "\n";
+
+?>
