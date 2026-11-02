@@ -1,253 +1,430 @@
 <?php
 
-$numbers = [10, 20, 30, 40];
-$fruits = ["Apple", "Banana", "Mango", "Orange"];
+// PHP ARRAYS
+
 
 // 1. Create Array
-print_r($fruits);
+
+$arr = [10, 20, 30, 40];
+
+$arra = array(10, 30, 70, 80);
+
+print_r($arr);
+print_r($arra);
+
+?>
+
+
+<?php
 
 // 2. Print Array
-foreach ($fruits as $value) {
-    echo $value . "\n";
-}
+
+$arr = [10, 20, 30, 40];
+
+print_r($arr);
+
+?>
+
+
+<?php
 
 // 3. Count Array Elements
-$count = count($numbers);
-echo "Number of elements: $count\n";
+
+$arr = [10, 20, 30, 40];
+
+$count = count($arr);
+
+echo "Total Array Elements: $count\n";
+
+?>
+
+
+<?php
 
 // 4. Sum Array Elements
-$sum = array_sum($numbers);
-echo "Sum: $sum\n";
 
-// 5. Print Array Element by Position
-echo "Element at position 1: ";
-print_r($fruits[1]);
-echo "\n";
+$arr = [10, 20, 30, 40];
 
-// 6. Print Array Elements using foreach
-foreach ($fruits as $value) {
-    echo $value . "\n";
+$sum = 0;
+
+// Method 1: Using Manual Logic
+
+foreach ($arr as $values) {
+    $sum = $sum + $values;
 }
 
-// 7. Find Array Average
+echo "Sum Using Manual Logic: $sum\n";
+
+
+// Method 2: Using Built-in Function
+
+echo "Sum Using array_sum(): " . array_sum($arr) . "\n";
+
+?>
+
+
+<?php
+
+// 5. Find Array Average
+
+$arr = [10, 20, 30, 40, 50];
+
+$sum = array_sum($arr);
+$count = count($arr);
+
 $average = $sum / $count;
+
 echo "Average: $average\n";
 
-//Largest → if ($value > $largest)
-//Smallest → if ($value < $smallest)
+?>
 
-// 8. Find Largest Array Number max
-$largest = $numbers[0];
 
-foreach ($numbers as $value) {
-    if ($value > $largest) {
-        $largest = $value;
+<?php
+
+// 6. Find Largest Array Number
+
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+$largest = $arr[0];
+
+foreach ($arr as $values) {
+    if ($values > $largest) {
+        $largest = $values;
     }
 }
 
-echo "Largest number: $largest\n";
+echo "Largest Number: $largest\n";
 
-// 9. Find Smallest Array Number min
-$smallest = $numbers[0];
+?>
 
-foreach ($numbers as $value) {
-    if ($value < $smallest) {
-        $smallest = $value;
+
+<?php
+
+// 7. Find Smallest Array Number
+
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+$smallest = $arr[0];
+
+foreach ($arr as $values) {
+    if ($values < $smallest) {
+        $smallest = $values;
     }
 }
 
-echo "Smallest number: $smallest\n";
+echo "Smallest Number: $smallest\n";
+
+?>
 
 
-// 10. Find Second Largest Array Number
+<?php
 
-$largest = $numbers[0];
-$secondLargest = null;
+// 8. Sort Array in Ascending Order
 
-foreach ($numbers as $value) {
-    if ($value > $largest) {
-        $secondLargest = $largest;
-        $largest = $value;
-    } elseif ($value < $largest && ($secondLargest === null || $value > $secondLargest)) {
-        $secondLargest = $value;
-    }
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+sort($arr);
+
+print_r($arr);
+
+?>
+
+
+<?php
+
+// 9. Sort Array in Descending Order
+
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+rsort($arr);
+
+print_r($arr);
+
+?>
+
+
+<?php
+
+// 10. Reverse Array
+
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+
+// Method 1: Using Built-in Function
+
+$reverse = array_reverse($arr);
+
+print_r($reverse);
+
+
+// Method 2: Using Manual Logic
+
+$reverse = [];
+
+$length = count($arr);
+
+for ($i = $length - 1; $i >= 0; $i--) {
+    $reverse[] = $arr[$i];
 }
 
-echo "Second largest number: $secondLargest\n";
+print_r($reverse);
 
+?>
 
-// 11. Find Second Smallest Array Number
 
-$smallest = $numbers[0];
-$secondSmallest = null;
+<?php
 
-foreach ($numbers as $value) {
-    if ($value < $smallest) {
-        $secondSmallest = $smallest;
-        $smallest = $value;
-    } elseif ($value > $smallest && ($secondSmallest === null || $value < $secondSmallest)) {
-        $secondSmallest = $value;
-    }
-}
+// 11. Search Array Element / Check Element Exists
 
-echo "Second smallest number: $secondSmallest\n";
+$arr = [100, 20, 8, 40, 35, 60, 70];
 
-// 12. Insert an Element into an Array
+$element = in_array(40, $arr);
 
-$numbers = [10, 20, 30, 40];
-
-$newElement = 50;
-
-$numbers[] = $newElement;
-
-echo "Array after inserting element: \n";
-
-print_r($numbers);
-
-
-// 13. Insert an Element at a Specific Position
-
-$numbers = [10, 20, 30, 40];
-
-$newElement = 25;
-$position = 2;
-
-array_splice($numbers, $position, 0, $newElement);
-
-echo "Array after inserting element at position $position: \n";
-
-print_r($numbers);
-
-
-// 14. Insert an Element at the Beginning of an Array
-
-$numbers = [10, 20, 30, 40];
-
-$newElement = 5;
-
-array_unshift($numbers, $newElement);
-
-echo "Array after inserting element at the beginning: \n";
-
-print_r($numbers);
-
-// 15. Delete an Array Element by Index
-
-$numbers = [10, 20, 30, 40];
-
-$indexToDelete = 2;
-
-unset($numbers[$indexToDelete]);
-
-echo "Array after deleting an element by index: \n";
-
-print_r($numbers);
-
-
-// 16. Delete an Array Element by Value
-
-$numbers = [10, 20, 30, 40];
-
-$valueToDelete = 30;
-
-$key = array_search($valueToDelete, $numbers, true);
-
-if ($key !== false) {
-    unset($numbers[$key]);
-}
-
-echo "Array after deleting an element by value: \n";
-
-print_r($numbers);
-
-
-// 17. Remove an Array Element and Reindex the Array
-
-$numbers = [10, 20, 30, 40];
-
-unset($numbers[1]);
-
-$numbers = array_values($numbers);
-
-echo "Array after removing an element and reindexing: \n";
-
-print_r($numbers);
-
-
-// 18. Update an Array Element
-
-$numbers = [10, 20, 30, 40];
-
-$numbers[2] = 99;
-
-echo "Array after updating an element: \n";
-
-print_r($numbers);
-
-
-// 19. Sort an Array in Ascending Order
-
-$numbers = [40, 10, 30, 20];
-
-sort($numbers);
-
-echo "Array sorted in ascending order: \n";
-
-print_r($numbers);
-
-
-// 20. Sort an Array in Descending Order
-
-$numbers = [40, 10, 30, 20];
-
-rsort($numbers);
-
-echo "Array sorted in descending order: \n";
-
-print_r($numbers);
-
-
-// 21. Reverse an Array
-
-$numbers = [10, 20, 30, 40];
-
-$reversed = array_reverse($numbers);
-
-echo "Original array: \n";
-
-print_r($numbers);
-
-echo "Reversed array: \n";
-
-print_r($reversed);
-
-
-// 22. Search for an Array Element
-
-$numbers = [10, 20, 30, 40];
-
-$searchValue = 30;
-
-$key = array_search($searchValue, $numbers, true);
-
-if ($key !== false) {
-    echo "Element $searchValue found at index $key.";
+if ($element) {
+    echo "Element Found\n";
 } else {
-    echo "Element $searchValue not found.";
+    echo "Element Not Found\n";
 }
 
+?>
 
-// 23. Check Whether an Element Exists in an Array
 
-$fruits = ["Apple", "Banana", "Mango", "Orange"];
+<?php
 
-$searchFruit = "Mango";
+// 12. Add Element to Array
 
-if (in_array($searchFruit, $fruits, true)) {
-    echo "$searchFruit exists in the array.";
-} else {
-    echo "$searchFruit does not exist in the array.";
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+
+// Method 1: Using Array Append Syntax
+
+$arr[] = 10;
+
+
+// Method 2: Using Built-in Function
+
+array_push($arr, 1, 2, 3);
+
+print_r($arr);
+
+?>
+
+
+<?php
+
+// 13. Remove Element from Array
+
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+
+// Method 1: Using unset()
+
+unset($arr[2], $arr[3]);
+
+
+// Method 2: Using array_splice()
+
+// array_splice(array, offset, length, replacement);
+
+// Remove 1 element starting from index 2
+
+// array_splice($arr, 2, 1);
+
+print_r($arr);
+
+?>
+
+
+<?php
+
+// 14. Update Array Element
+
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+
+// Method 1: Update Using Array Index
+
+$arr[2] = 1000;
+
+
+// Method 2: Update Using array_splice()
+
+// Replace 1 element at index 3 with 1000
+
+// array_splice($arr, 3, 1, [1000]);
+
+print_r($arr);
+
+?>
+
+
+<?php
+
+// 15. Merge Arrays
+
+$arr = [100, 20, 8, 40, 35, 60, 70];
+
+$ar = [1, 2, 3, 4, 5];
+
+
+// Method 1: Using Built-in Function
+
+// $result = array_merge($arr, $ar);
+
+
+// Method 2: Using Manual Logic
+
+$result = [];
+
+foreach ($arr as $value) {
+    $result[] = $value;
 }
 
+foreach ($ar as $value) {
+    $result[] = $value;
+}
+
+print_r($result);
+
+?>
+
+
+<?php
+
+// 16. Find Array Unique Values / Remove Array Duplicates
+
+$arr = [100, 20, 8, 40, 35, 60, 70, 20, 40];
+
+$result = array_unique($arr);
+
+print_r($result);
+
+?>
+
+
+<?php
+
+// 17. Find Array Duplicates
+
+$arr = [100, 20, 8, 40, 35, 60, 70, 20, 40];
+
+$result = array_count_values($arr);
+
+foreach ($result as $values => $count) {
+    if ($count > 1) {
+        echo $values . "\n";
+    }
+}
+
+?>
+
+
+<?php
+
+// 18. Find Common Elements
+
+$arr1 = [100, 20, 8, 40, 35, 60, 70, 20, 40];
+
+$arr2 = [1, 2, 3, 4, 5, 33, 67, 8, 70];
+
+$result = array_intersect($arr1, $arr2);
+
+print_r($result);
+
+?>
+
+
+<?php
+
+// 19. Find Difference Between Arrays
+
+$arr1 = [100, 20, 8, 40, 35, 60, 70, 20, 40];
+
+$arr2 = [1, 2, 3, 4, 5, 33, 67, 8, 70];
+
+
+// Elements present in Array 1 but not in Array 2
+
+$common1 = array_diff($arr1, $arr2);
+
+print_r($common1);
+
+
+// Elements present in Array 2 but not in Array 1
+
+$common2 = array_diff($arr2, $arr1);
+
+print_r($common2);
+
+?>
+
+
+<?php
+
+// 20. Find Array Intersection
+
+$arr1 = [100, 20, 8, 40, 35, 60, 70, 20, 40];
+
+$arr2 = [1, 2, 3, 4, 5, 33, 67, 8, 70];
+
+$result = array_intersect($arr1, $arr2);
+
+print_r($result);
+
+?>
+
+
+<?php
+
+// 21. Find Array Union
+
+$arr1 = [100, 20, 8, 40, 35, 60, 70, 20, 40];
+
+$arr2 = [1, 2, 3, 4, 5, 33, 67, 8, 70];
+
+$result = array_unique(array_merge($arr1, $arr2));
+
+$result = array_values($result);
+
+print_r($result);
+
+?>
+
+
+<?php
+
+// 22. Split Array
+
+$arr = [100, 20, 8, 40, 35, 60, 70, 20, 40];
+
+$result = array_chunk($arr, 3);
+
+print_r($result);
+
+?>
+
+
+<?php
+
+// 23. Convert Array to String
+
+$arr = ["PHP", "Laravel", "Symfony", "PostgreSQL"];
+
+$result = implode(", ", $arr);
+
+echo $result . "\n";
+
+?>
+
+
+<?php
+
+// 24. Convert String to Array
+
+$str = "PHP,Laravel,Symfony,PostgreSQL";
+
+$result = explode(",", $str);
+
+print_r($result);
 
 ?>
